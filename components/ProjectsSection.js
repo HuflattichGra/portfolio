@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { Github, ExternalLink, Eye, Filter } from 'lucide-react';
+import { Github, ExternalLink, Filter } from 'lucide-react';
 
 const ProjectsSection = ({ data }) => {
   const [filter, setFilter] = useState('All');

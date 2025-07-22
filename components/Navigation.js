@@ -39,7 +39,7 @@ const Navigation = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [navItems]);
 
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
@@ -134,6 +134,14 @@ const Navigation = () => {
               
               {/* Download Resume Button */}
               <motion.button
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = '/Junran_CV_ra.pdf';
+                  link.download = 'Junran_Tao_Resume.pdf';
+                  document.body.appendChild(link);
+                  link.click();
+                  document.body.removeChild(link);
+                }}
                 className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
                   scrolled
                     ? 'bg-gradient-to-r from-purple-500 to-cyan-500 text-white hover:from-purple-600 hover:to-cyan-600'
@@ -189,6 +197,15 @@ const Navigation = () => {
             
             <motion.button
               variants={itemVariants}
+              onClick={() => {
+                const link = document.createElement('a');
+                link.href = '/Junran_CV_ra.pdf';
+                link.download = 'Junran_Tao_Resume.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                setIsOpen(false);
+              }}
               className="flex items-center gap-3 w-full px-3 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg font-semibold"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}

@@ -38,8 +38,17 @@ const ResumeSection = ({ data }) => {
   };
 
   const handlePreview = () => {
-    // Open PDF in new tab for preview
-    window.open('/Junran_CV_ra.pdf', '_blank');
+    // Try to open PDF in new tab for preview
+    try {
+      const newWindow = window.open('/Junran_CV_ra.pdf', '_blank');
+      // If popup was blocked, fallback to download
+      if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+        handleDownload();
+      }
+    } catch (error) {
+      // Fallback to download if preview fails
+      handleDownload();
+    }
   };
 
   return (
