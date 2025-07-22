@@ -206,7 +206,7 @@ const ResumeSection = ({ data }) => {
               </motion.button>
               
               <p className="text-gray-400 text-sm text-center mt-4">
-                Last updated: July 2025 • PDF Format • 2 pages
+                Last updated: July 2025 • PDF Format • 1 page
               </p>
             </div>
 

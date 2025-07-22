@@ -292,17 +292,18 @@ const ProjectsSection = ({ data }) => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <motion.button
-            className="group px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
+          <motion.a
+            href="https://github.com/HuflattichGra"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-purple-500 to-cyan-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className="flex items-center gap-2">
-              <Github size={20} />
-              View All Projects on GitHub
-              <ExternalLink size={16} />
-            </span>
-          </motion.button>
+            <Github size={20} />
+            View All Projects on GitHub
+            <ExternalLink size={16} />
+          </motion.a>
         </motion.div>
       </div>
     </section>
