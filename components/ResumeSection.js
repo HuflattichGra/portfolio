@@ -45,7 +45,7 @@ const ResumeSection = ({ data }) => {
       if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
         handleDownload();
       }
-    } catch (error) {
+    } catch {
       // Fallback to download if preview fails
       handleDownload();
     }

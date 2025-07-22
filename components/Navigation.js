@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Menu, X, Home, User, Code, Award, Mail, Download } from 'lucide-react';
 
 const Navigation = () => {
@@ -9,13 +9,13 @@ const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
-  const navItems = [
+  const navItems = useMemo(() => [
     { id: 'home', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
     { id: 'projects', label: 'Projects', icon: Code },
     { id: 'skills', label: 'Skills', icon: Award },
     { id: 'contact', label: 'Contact', icon: Mail },
-  ];
+  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
