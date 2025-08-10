@@ -100,7 +100,7 @@ const Navigation = () => {
               <span className={`text-2xl font-bold transition-colors duration-300 ${
                 scrolled ? 'text-gray-900' : 'text-white'
               }`}>
-                JT
+                Grace Portfolio
               </span>
             </motion.div>
 

@@ -30,7 +30,7 @@ const ResumeSection = ({ data }) => {
   const handleDownload = () => {
     // Create a link to download the PDF
     const link = document.createElement('a');
-    link.href = '/Junran_CV_ra.pdf';
+    link.href = '/Junran_CV_sde_8.pdf';
     link.download = 'Junran_Tao_Resume.pdf';
     document.body.appendChild(link);
     link.click();
@@ -40,7 +40,7 @@ const ResumeSection = ({ data }) => {
   const handlePreview = () => {
     // Try to open PDF in new tab for preview
     try {
-      const newWindow = window.open('/Junran_CV_ra.pdf', '_blank');
+      const newWindow = window.open('/Junran_CV_sde_8.pdf', '_blank');
       // If popup was blocked, fallback to download
       if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
         handleDownload();
@@ -206,7 +206,7 @@ const ResumeSection = ({ data }) => {
               </motion.button>
               
               <p className="text-gray-400 text-sm text-center mt-4">
-                Last updated: July 2025 • PDF Format • 1 page
+                Last updated: August 2025 • PDF Format • 1 page
               </p>
             </div>
 

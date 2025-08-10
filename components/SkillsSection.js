@@ -119,9 +119,9 @@ const SkillsSection = () => {
                 <div className="text-sm text-gray-500 mt-1">From CUDA to React</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-green-600 mb-2">4.8×</div>
-                <div className="text-gray-700">Performance Improvement</div>
-                <div className="text-sm text-gray-500 mt-1">GPU Optimization Achievement</div>
+                <div className="text-4xl font-bold text-green-600 mb-2">15+</div>
+                <div className="text-gray-700">Projects Completed</div>
+                <div className="text-sm text-gray-500 mt-1"></div>
               </div>
             </div>
           </div>

@@ -1,33 +1,33 @@
 // Portfolio data s                { name      { n      { name: "Model Optimization", level: 92, icon: "🎯" }me: "SQL Server", level: 85, icon: "🗄️" }, "OpenCV", level: 88, icon: "👁️" },{ name: "MATLAB", level: 80, icon: "📊" }{ name: "C#", level: 82, icon: "🔹" },ructure
 export const portfolioData = {
   personal: {
-    name: "Junran Tao",
+    name: "Grace Tao",
     title: "Full Stack & Deep Learning Engineer",
     location: "Hoboken, New Jersey",
     email: "jtao11@stevens.edu",
     phone: "551 359 1768",
     linkedin: "https://linkedin.com/in/junran-tao-7381222ba",
     github: "https://github.com/HuflattichGra",
-    bio: "Passionate Full Stack & Deep Learning Engineer with expertise in GPU optimization, computer vision, and scalable software development. Currently pursuing MS in Computer Science at Stevens Institute of Technology while conducting cutting-edge research in Circuit Graph Neural Networks.",
-    tagline: "Optimizing AI systems with cutting-edge GPU acceleration"
+    bio: "Passionate Full Stack & Deep Learning Engineer with expertise in scalable software development and GPU optimization. Currently pursuing MS in Computer Science at Stevens Institute of Technology while conducting cutting-edge research in Graph Neural Networks.",
+    tagline: "Developing AI and Web systems"
   },
   
   skills: {
     languages: [
+      { name: "JavaScript", level: 90, icon: "⚡" },
+      { name: "TypeScript", level: 85, icon: "🔷" },
       { name: "Python", level: 95, icon: "🐍" },
       { name: "Java", level: 88, icon: "☕" },
       { name: "C/C++", level: 85, icon: "⚙️" },
-      { name: "C#", level: 82, icon: "�" },
-      { name: "JavaScript", level: 90, icon: "⚡" },
-      { name: "TypeScript", level: 85, icon: "🔷" },
+      { name: "C#", level: 82, icon: "🔹" },
       { name: "HTML/CSS", level: 92, icon: "🌐" },
       { name: "SQL", level: 88, icon: "🗄️" },
-      { name: "MATLAB", level: 80, icon: "�" }
+      { name: "MATLAB", level: 80, icon: "📊" }
     ],
     technologies: [
       { name: "PyTorch", level: 95, icon: "🔥" },
       { name: "TensorFlow", level: 90, icon: "🧠" },
-      { name: "OpenCV", level: 88, icon: "�️" },
+      { name: "OpenCV", level: 88, icon: "👁️" },
       { name: "scikit-learn", level: 85, icon: "📈" },
       { name: "CUDA", level: 92, icon: "🚀" },
       { name: "Computer Vision", level: 90, icon: "👀" },
@@ -39,7 +39,7 @@ export const portfolioData = {
       { name: "Spring Cloud", level: 85, icon: "☁️" },
       { name: ".NET", level: 82, icon: "🔷" },
       { name: "Microservices", level: 85, icon: "🔧" },
-      { name: "SQL Server", level: 85, icon: "�️" },
+      { name: "SQL Server", level: 85, icon: "🗄️" },
       { name: "Google Cloud", level: 80, icon: "☁️" }
     ],
     tools: [
@@ -48,7 +48,7 @@ export const portfolioData = {
       { name: "JUnit/Mockito", level: 85, icon: "🧪" },
       { name: "CUDA Kernels", level: 90, icon: "🚀" },
       { name: "Multi-Stream CUDA", level: 88, icon: "⚡" },
-      { name: "Model Optimization", level: 92, icon: "�" }
+      { name: "Model Optimization", level: 92, icon: "🎯" }
     ]
   },
 

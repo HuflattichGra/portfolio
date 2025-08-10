@@ -103,7 +103,7 @@ const AboutSection = () => {
 
               {/* Recent Experience Highlight */}
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">Current Role</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">Recent Role</h3>
                 <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-6">
                   <h4 className="text-xl font-bold mb-2">Deep Learning Research Assistant</h4>
                   <p className="text-blue-100 mb-3">Stevens Institute of Technology</p>
