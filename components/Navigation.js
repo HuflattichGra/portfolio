@@ -136,7 +136,7 @@ const Navigation = () => {
               <motion.button
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/Junran_CV_ra.pdf';
+                  link.href = '/Junran_CV_sde_8.pdf';
                   link.download = 'Junran_Tao_Resume.pdf';
                   document.body.appendChild(link);
                   link.click();
