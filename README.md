@@ -1,36 +1,129 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Junran Tao - Portfolio
 
-## Getting Started
+A modern, minimalist portfolio website showcasing full-stack development and AI research projects.
 
-First, run the development server:
+## 🎨 Design
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Built with a **Morandi color palette** emphasizing elegance and professionalism:
+- Clean white background with soft sage, dust blue, and mauve accents
+- Responsive design for all devices
+- Smooth animations and transitions
+
+## 🚀 Tech Stack
+
+### Frontend
+- **Next.js 15.1.6** - React framework with Pages Router
+- **React 19** - UI components
+- **Tailwind CSS 3.4.1** - Utility-first styling
+- **Framer Motion 12** - Smooth animations
+
+### Typography
+- **Playfair Display** - Elegant serif for headings
+- **Inter** - Clean sans-serif for body text
+
+### Deployment
+- **Vercel** - Hosting and continuous deployment
+
+## 📁 Project Structure
+
+```
+junran-portfolio/
+├── components/          # Reusable React components
+│   ├── Navigation.js
+│   ├── ThesisSection.js
+│   ├── EvidenceSection.js
+│   ├── CTASection.js
+│   └── ...
+├── data/               # Portfolio data
+│   ├── portfolio.js
+│   └── caseStudies.js
+├── pages/              # Next.js pages
+│   ├── index.js
+│   ├── _app.js
+│   └── case/[slug].js  # Dynamic project detail pages
+├── public/             # Static assets
+└── styles/             # Global styles
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation
 
-## Learn More
+```bash
+# Clone the repository
+git clone https://github.com/HuflattichGra/portfolio.git
 
-To learn more about Next.js, take a look at the following resources:
+# Navigate to project directory
+cd junran-portfolio
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Install dependencies
+npm install
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Run development server
+npm run dev
+```
 
-## Deploy on Vercel
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Build for Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
+
+## 📦 Key Features
+
+- **Dynamic Project Pages** - Detailed case studies with metrics and tech stacks
+- **Responsive Design** - Optimized for mobile, tablet, and desktop
+- **Performance Optimized** - Fast loading with Next.js optimization
+- **SEO Friendly** - Meta tags and structured content
+- **Smooth Animations** - Framer Motion for engaging UX
+
+## 🎯 Sections
+
+1. **Hero** - Introduction with availability status and core competencies
+2. **Projects** - Showcase of full-stack and AI research work
+3. **Contact** - Professional contact information
+
+## 📝 Customization
+
+### Update Personal Information
+Edit `data/portfolio.js`:
+```javascript
+export const portfolioData = {
+  personal: {
+    name: "Your Name",
+    email: "your.email@example.com",
+    // ...
+  }
+}
+```
+
+### Add New Projects
+Edit `data/caseStudies.js`:
+```javascript
+export const caseStudies = [
+  {
+    id: 1,
+    slug: "project-slug",
+    title: "Project Title",
+    // ...
+  }
+]
+```
+
+## 📄 License
+
+© 2025 Junran Tao. All rights reserved.
+
+## 🔗 Links
+
+- **Live Site**: [https://junran-portfolio.vercel.app](https://junran-portfolio.vercel.app)
+- **GitHub**: [https://github.com/HuflattichGra/portfolio](https://github.com/HuflattichGra/portfolio)
+- **LinkedIn**: [Junran Tao](https://www.linkedin.com/in/junran-tao)
+

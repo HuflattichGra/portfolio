@@ -1,10 +1,10 @@
 // Portfolio data s                { name      { n      { name: "Model Optimization", level: 92, icon: "🎯" }me: "SQL Server", level: 85, icon: "🗄️" }, "OpenCV", level: 88, icon: "👁️" },{ name: "MATLAB", level: 80, icon: "📊" }{ name: "C#", level: 82, icon: "🔹" },ructure
 export const portfolioData = {
   personal: {
-    name: "Grace Tao",
+    name: "Junran Tao",
     title: "Full Stack & Deep Learning Engineer",
     location: "Hoboken, New Jersey",
-    email: "jtao11@stevens.edu",
+    email: "gracejrtao@gmail.com",
     phone: "551 359 1768",
     linkedin: "https://linkedin.com/in/junran-tao-7381222ba",
     github: "https://github.com/HuflattichGra",

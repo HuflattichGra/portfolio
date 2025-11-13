@@ -1,51 +1,37 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useState, useEffect, useMemo } from 'react';
-import { Menu, X, Home, User, Code, Award, Mail, Download } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Github, Linkedin, FileDown } from 'lucide-react';
+import portfolioData from '../data/portfolio';
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
-
-  const navItems = useMemo(() => [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'about', label: 'About', icon: User },
-    { id: 'projects', label: 'Projects', icon: Code },
-    { id: 'skills', label: 'Skills', icon: Award },
-    { id: 'contact', label: 'Contact', icon: Mail },
-  ], []);
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
-      
-      // Determine active section based on scroll position
-      const sections = navItems.map(item => item.id);
-      const currentSection = sections.find(section => {
-        const element = document.getElementById(section);
-        if (element) {
-          const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
-        }
-        return false;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
-      }
     };
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [navItems]);
+  }, []);
 
-  const scrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId);
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const scrollToEvidence = () => {
+    const element = document.getElementById('evidence');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
+    }
+  };
+
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -61,173 +47,115 @@ const Navigation = () => {
     }
   };
 
-  const menuVariants = {
-    closed: { opacity: 0, y: -20 },
-    open: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.3,
-        staggerChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    closed: { opacity: 0, y: -10 },
-    open: { opacity: 1, y: 0 }
-  };
-
   return (
-    <>
-      <motion.nav
-        variants={navVariants}
-        initial="hidden"
-        animate="visible"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          scrolled 
-            ? 'bg-white/95 backdrop-blur-sm shadow-lg border-b border-gray-200' 
-            : 'bg-transparent'
-        }`}
-      >
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
-            <motion.div
-              className="flex items-center"
-              whileHover={{ scale: 1.05 }}
-            >
-              <span className={`text-2xl font-bold transition-colors duration-300 ${
-                scrolled ? 'text-gray-900' : 'text-white'
-              }`}>
-                Grace Portfolio
-              </span>
-            </motion.div>
+    <motion.nav
+      variants={navVariants}
+      initial="hidden"
+      animate="visible"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/95 backdrop-blur-md shadow-sm border-b border-morandi-beige' 
+          : 'bg-white/80 backdrop-blur-sm'
+      }`}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo / Name */}
+          <motion.button
+            onClick={scrollToTop}
+            className="flex items-center"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <span className="text-xl md:text-2xl font-playfair font-bold text-morandi-charcoal hover:text-morandi-sage transition-colors">
+              Junran Tao
+            </span>
+          </motion.button>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <motion.button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors duration-300 ${
-                    activeSection === item.id
-                      ? scrolled ? 'text-purple-600' : 'text-cyan-400'
-                      : scrolled ? 'text-gray-600 hover:text-purple-600' : 'text-gray-300 hover:text-white'
-                  }`}
-                  whileHover={{ y: -2 }}
-                  whileTap={{ y: 0 }}
-                >
-                  {item.label}
-                  {activeSection === item.id && (
-                    <motion.div
-                      layoutId="activeIndicator"
-                      className={`absolute bottom-0 left-0 right-0 h-0.5 ${
-                        scrolled ? 'bg-purple-600' : 'bg-cyan-400'
-                      }`}
-                      initial={false}
-                      transition={{ duration: 0.3 }}
-                    />
-                  )}
-                </motion.button>
-              ))}
-              
-              {/* Download Resume Button */}
-              <motion.button
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/Junran_CV_sde_8.pdf';
-                  link.download = 'Junran_Tao_Resume.pdf';
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-                className={`flex items-center gap-2 px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
-                  scrolled
-                    ? 'bg-gradient-to-r from-purple-500 to-cyan-500 text-white hover:from-purple-600 hover:to-cyan-600'
-                    : 'bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 border border-white/30'
-                }`}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Download size={16} />
-                Resume
-              </motion.button>
-            </div>
-
-            {/* Mobile menu button */}
-            <motion.button
-              onClick={() => setIsOpen(!isOpen)}
-              className={`md:hidden p-2 rounded-lg transition-colors duration-300 ${
-                scrolled ? 'text-gray-600 hover:text-purple-600' : 'text-white hover:text-cyan-400'
-              }`}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
+          {/* Desktop Navigation - Simplified */}
+          <div className="hidden md:flex items-center gap-6">
+            {/* Quick Links */}
+            <button
+              onClick={scrollToEvidence}
+              className="text-morandi-charcoal hover:text-morandi-sage font-medium transition-colors px-3 py-2 rounded-lg hover:bg-morandi-beige/50"
             >
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </motion.button>
+              Projects
+            </button>
+
+            <button
+              onClick={scrollToContact}
+              className="text-morandi-charcoal hover:text-morandi-sage font-medium transition-colors px-3 py-2 rounded-lg hover:bg-morandi-beige/50"
+            >
+              Contact
+            </button>
+
+            {/* Divider */}
+            <div className="w-px h-6 bg-morandi-beige"></div>
+
+            {/* Social Links */}
+            <a
+              href={portfolioData.personal.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-morandi-grey hover:text-morandi-sage transition-colors p-2 rounded-lg hover:bg-morandi-beige/50"
+              title="GitHub"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+
+            <a
+              href={portfolioData.personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-morandi-grey hover:text-morandi-sage transition-colors p-2 rounded-lg hover:bg-morandi-beige/50"
+              title="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+
+            {/* Resume Download */}
+            <a
+              href="/Junran_CV_sde_2026.docx.pdf"
+              download
+              className="flex items-center gap-2 px-4 py-2 bg-morandi-sage hover:bg-morandi-dust-blue text-white rounded-xl font-medium transition-all shadow-sm hover:shadow-md"
+              title="Download Resume"
+            >
+              <FileDown className="w-4 h-4" />
+              <span className="hidden lg:inline">Resume</span>
+            </a>
+          </div>
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden flex items-center gap-4">
+            <a
+              href={portfolioData.personal.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-morandi-grey hover:text-morandi-sage transition-colors p-2"
+            >
+              <Github className="w-5 h-5" />
+            </a>
+
+            <a
+              href={portfolioData.personal.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-morandi-grey hover:text-morandi-sage transition-colors p-2"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+
+            <a
+              href="/Junran_CV_sde_2026.docx.pdf"
+              download
+              className="text-morandi-sage hover:text-morandi-dust-blue transition-colors p-2"
+            >
+              <FileDown className="w-5 h-5" />
+            </a>
           </div>
         </div>
-
-        {/* Mobile Navigation */}
-        <motion.div
-          variants={menuVariants}
-          initial="closed"
-          animate={isOpen ? "open" : "closed"}
-          className={`md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-sm border-b border-gray-200 shadow-lg ${
-            isOpen ? 'block' : 'hidden'
-          }`}
-        >
-          <div className="px-4 py-6 space-y-4">
-            {navItems.map((item) => (
-              <motion.button
-                key={item.id}
-                variants={itemVariants}
-                onClick={() => scrollToSection(item.id)}
-                className={`flex items-center gap-3 w-full px-3 py-3 text-left rounded-lg transition-colors duration-300 ${
-                  activeSection === item.id
-                    ? 'bg-purple-50 text-purple-600'
-                    : 'text-gray-600 hover:bg-gray-50 hover:text-purple-600'
-                }`}
-              >
-                <item.icon size={20} />
-                {item.label}
-              </motion.button>
-            ))}
-            
-            <motion.button
-              variants={itemVariants}
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/Junran_CV_sde_8.pdf';
-                link.download = 'Junran_Tao_Resume.pdf';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-                setIsOpen(false);
-              }}
-              className="flex items-center gap-3 w-full px-3 py-3 bg-gradient-to-r from-purple-500 to-cyan-500 text-white rounded-lg font-semibold"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Download size={20} />
-              Download Resume
-            </motion.button>
-          </div>
-        </motion.div>
-      </motion.nav>
-
-      {/* Mobile menu overlay */}
-      {isOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 md:hidden"
-          onClick={() => setIsOpen(false)}
-        />
-      )}
-    </>
+      </div>
+    </motion.nav>
   );
 };
 

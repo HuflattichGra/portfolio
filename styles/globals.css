@@ -1,8 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Crimson+Text:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  /* Morandi Color Palette */
+  --morandi-sage: #B7C4B1;
+  --morandi-dust-blue: #B4C7D9;
+  --morandi-mauve: #C4B7C5;
+  --morandi-clay: #D4B5A5;
+  --morandi-grey: #9CA3AF;
+  --morandi-beige: #E8DED2;
+  --morandi-soft-white: #F9F7F4;
+  --morandi-charcoal: #5A5A5A;
+}
 
 * {
   box-sizing: border-box;
@@ -16,9 +28,17 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  line-height: 1.6;
-  color: #333;
+  line-height: 1.7;
+  color: var(--morandi-charcoal);
+  background-color: var(--morandi-soft-white);
   overflow-x: hidden;
+}
+
+/* Serif headings for elegance */
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 /* Remove default button styles */
@@ -26,26 +46,33 @@ button {
   border: none;
   background: none;
   cursor: pointer;
+  font-family: 'Inter', sans-serif;
 }
 
 /* Link styles */
 a {
   text-decoration: none;
   color: inherit;
+  transition: all 0.3s ease;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Morandi style */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1a1a;
+  background: var(--morandi-beige);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #4a5568;
-  border-radius: 4px;
+  background: var(--morandi-sage);
+  border-radius: 5px;
+  border: 2px solid var(--morandi-beige);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--morandi-dust-blue);
 }
 
 ::-webkit-scrollbar-thumb:hover {
