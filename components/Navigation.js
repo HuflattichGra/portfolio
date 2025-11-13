@@ -21,14 +21,6 @@ const Navigation = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToTop = () => {
-    if (isHomePage) {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      router.push('/');
-    }
-  };
-
   const scrollToEvidence = () => {
     if (isHomePage) {
       const element = document.getElementById('evidence');
@@ -98,12 +90,12 @@ const Navigation = () => {
               Projects
             </button>
 
-            <a
+            <Link
               href="/about"
               className="text-morandi-charcoal hover:text-morandi-sage font-medium transition-colors px-3 py-2 rounded-lg hover:bg-morandi-beige/50"
             >
               About
-            </a>
+            </Link>
 
             <button
               onClick={scrollToContact}
