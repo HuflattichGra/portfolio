@@ -62,7 +62,7 @@ const CTASection = () => {
             variants={itemVariants}
             className="text-4xl md:text-5xl font-playfair font-bold mb-8 text-morandi-charcoal"
           >
-            Let's Build Robust Systems Together
+            Let&apos;s Build Robust Systems Together
           </motion.h2>
 
           {/* Filtered CTA Message */}

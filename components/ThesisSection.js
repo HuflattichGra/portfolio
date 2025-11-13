@@ -84,11 +84,11 @@ const ThesisSection = () => {
             <motion.div variants={itemVariants}>
               <div className="bg-white backdrop-blur-md rounded-xl p-6 border border-morandi-beige shadow-lg h-full">
                 <p className="text-base md:text-lg leading-relaxed text-morandi-charcoal">
-                  I'm passionate about{' '}
+                  I&apos;m passionate about{' '}
                   <span className="font-bold text-morandi-sage">
                     building end-to-end systems
                   </span>
-                  . Whether it's{' '}
+                  . Whether it&apos;s{' '}
                   <span className="font-semibold text-morandi-dust-blue">
                     reducing Circuit GNN training time by 46.8%
                   </span>

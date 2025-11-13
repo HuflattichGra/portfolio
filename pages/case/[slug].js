@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Github, ExternalLink, ChevronRight, FileText } from 'lucide-react';
 import caseStudies from '../../data/caseStudies';
@@ -159,9 +160,11 @@ export default function CaseStudyDetail() {
                     {caseStudy.images.map((image, index) => (
                       <div key={index} className="space-y-4">
                         <div className="relative w-full overflow-hidden rounded-xl border-2 border-morandi-beige hover:border-morandi-sage transition-colors group">
-                          <img 
+                          <Image 
                             src={image.src} 
                             alt={image.alt}
+                            width={600}
+                            height={400}
                             className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
                           />
                         </div>

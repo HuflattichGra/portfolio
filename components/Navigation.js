@@ -2,11 +2,15 @@
 
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 import { Github, Linkedin, FileDown } from 'lucide-react';
 import portfolioData from '../data/portfolio';
 
 const Navigation = () => {
   const [scrolled, setScrolled] = useState(false);
+  const router = useRouter();
+  const isHomePage = router.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,20 +22,32 @@ const Navigation = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (isHomePage) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      router.push('/');
+    }
   };
 
   const scrollToEvidence = () => {
-    const element = document.getElementById('evidence');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isHomePage) {
+      const element = document.getElementById('evidence');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      router.push('/#evidence');
     }
   };
 
   const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (isHomePage) {
+      const element = document.getElementById('contact');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      router.push('/#contact');
     }
   };
 
@@ -61,16 +77,16 @@ const Navigation = () => {
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo / Name */}
-          <motion.button
-            onClick={scrollToTop}
-            className="flex items-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            <span className="text-xl md:text-2xl font-playfair font-bold text-morandi-charcoal hover:text-morandi-sage transition-colors">
-              Junran Tao
-            </span>
-          </motion.button>
+          <Link href="/" className="flex items-center">
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="text-xl md:text-2xl font-playfair font-bold text-morandi-charcoal hover:text-morandi-sage transition-colors">
+                Junran Tao
+              </span>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation - Simplified */}
           <div className="hidden md:flex items-center gap-6">
@@ -81,6 +97,13 @@ const Navigation = () => {
             >
               Projects
             </button>
+
+            <a
+              href="/about"
+              className="text-morandi-charcoal hover:text-morandi-sage font-medium transition-colors px-3 py-2 rounded-lg hover:bg-morandi-beige/50"
+            >
+              About
+            </a>
 
             <button
               onClick={scrollToContact}
