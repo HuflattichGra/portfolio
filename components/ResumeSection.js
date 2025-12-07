@@ -31,7 +31,7 @@ const ResumeSection = ({ data }) => {
     // Create a link to download the PDF
     const link = document.createElement('a');
     link.href = '/Junran_CV_sde_8.pdf';
-    link.download = 'Junran_Tao_Resume.pdf';
+    link.download = 'Junran_CV_sde_2026.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

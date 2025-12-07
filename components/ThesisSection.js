@@ -154,7 +154,7 @@ const ThesisSection = () => {
                 </a>
 
                 <a
-                  href="/Junran_CV_sde_2026.docx.pdf"
+                  href="/Junran_CV_sde_2026.pdf"
                   download
                   className="group flex items-center justify-center gap-2 px-5 py-3 bg-morandi-mauve hover:bg-morandi-clay text-white rounded-lg font-semibold transition-all shadow-md hover:shadow-lg hover:scale-105 transform text-sm flex-1"
                 >

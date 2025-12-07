@@ -130,7 +130,7 @@ const Navigation = () => {
 
             {/* Resume Download */}
             <a
-              href="/Junran_CV_sde_2026.docx.pdf"
+              href="/Junran_CV_sde_2026.pdf"
               download
               className="flex items-center gap-2 px-4 py-2 bg-morandi-sage hover:bg-morandi-dust-blue text-white rounded-xl font-medium transition-all shadow-sm hover:shadow-md"
               title="Download Resume"
@@ -161,7 +161,7 @@ const Navigation = () => {
             </a>
 
             <a
-              href="/Junran_CV_sde_2026.docx.pdf"
+              href="/Junran_CV_sde_2026.pdf"
               download
               className="text-morandi-sage hover:text-morandi-dust-blue transition-colors p-2"
             >
